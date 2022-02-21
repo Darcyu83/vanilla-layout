@@ -1,0 +1,56 @@
+html,
+body,
+.container {
+  margin: 0;
+  box-sizing: border-box;
+  height: 100%;
+}
+
+.container {
+  background-color: lightgreen;
+  display: flex;
+  flex-flow: column nowrap;
+}
+
+.single_Slider {
+  display: flex;
+  overflow-x: auto;
+}
+
+.x {
+  flex-flow: row nowrap;
+  scroll-snap-type: x proximity;
+  flex: 1 1 30%;
+}
+
+.y {
+  flex-flow: column nowrap;
+  scroll-snap-type: y mandatory;
+  display: flex;
+  align-items: center;
+  flex: 1 1 70%;
+}
+
+.single_Slider.x > * {
+  scroll-snap-align: center;
+}
+.single_Slider.y > * {
+  scroll-snap-align: start;
+}
+
+.x > .item {
+  flex: none;
+  width: 100%;
+  height: 128px;
+  font-size: 4rem;
+}
+.y > .item {
+  flex: none;
+  width: 50%;
+  height: 500px;
+  font-size: 4rem;
+}
+
+.item:nth-child(odd) {
+  background-color: lightseagreen;
+}
